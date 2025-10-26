@@ -1,0 +1,152 @@
+/* فونت فارسی */
+@font-face {
+  font-family: 'Yekan';
+  src: url('https://cdn.jsdelivr.net/gh/rastikerdar/yekan-font@v3.0.0/dist/Yekan.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* کانتینر نقشه */
+.iran-map-elementor-wrapper {
+  direction: rtl;
+  text-align: right;
+  position: relative;
+  width: 100%;
+}
+
+.iran-map-container {
+  display: block;
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* SVG نقشه */
+.iran-map-container .map {
+  display: block;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.iran-map-container .map svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* مخفی کردن border و جزایر */
+.iran-map-container .map .border path,
+.iran-map-container .map .island path {
+  display: none !important;
+}
+
+/* استان‌ها */
+.iran-map-container .map .province path {
+  fill: #E7E7E7;
+  stroke: none;
+  transition: all 0.3s ease;
+  cursor: default;
+}
+
+/* استان‌های فعال */
+.iran-map-container .map .province path.active {
+  stroke: #FF6A36;
+  stroke-width: 4;
+  cursor: pointer;
+}
+
+.iran-map-container .map .province path.active:hover {
+  fill: #FF6A36 !important;
+}
+
+/* دریا و دریاچه */
+.iran-map-container .map .sea path,
+.iran-map-container .map .lake path {
+  fill: transparent;
+  pointer-events: none;
+}
+
+/* تولتیپ */
+.iran-map-container .show-title {
+  position: absolute;
+  display: none;
+  background-color: #ffffff;
+  color: #333333;
+  padding: 12px 16px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  pointer-events: none;
+  min-width: 120px;
+  text-align: center;
+  line-height: 1.5;
+  font-family: 'Yekan', Tahoma, sans-serif;
+}
+
+.iran-map-container .show-title .tooltip-name {
+  display: block;
+  font-weight: 700;
+  color: #FF6A36;
+  margin-bottom: 4px;
+  font-size: 14px;
+}
+
+.iran-map-container .show-title .tooltip-phone {
+  display: block;
+  color: #666666;
+  font-size: 13px;
+  direction: ltr;
+  unicode-bidi: plaintext;
+}
+
+/* نام استان روی نقشه */
+.iran-map-container .city-name {
+  fill: #000000;
+  font-size: 16px;
+  font-weight: 400;
+  text-anchor: middle;
+  pointer-events: none;
+  transition: fill 0.3s ease;
+  font-family: 'Yekan', Tahoma, sans-serif;
+}
+
+/* ریسپانسیو */
+@media (max-width: 768px) {
+  .iran-map-container .map svg {
+    height: 400px;
+  }
+  
+  .iran-map-container .city-name {
+    font-size: 12px;
+  }
+  
+  .iran-map-container .show-title {
+    padding: 8px 12px;
+    min-width: 100px;
+  }
+  
+  .iran-map-container .show-title .tooltip-name {
+    font-size: 12px;
+  }
+  
+  .iran-map-container .show-title .tooltip-phone {
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 480px) {
+  .iran-map-container .map svg {
+    height: 300px;
+  }
+  
+  .iran-map-container .city-name {
+    font-size: 10px;
+  }
+}

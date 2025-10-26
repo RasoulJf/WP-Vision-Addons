@@ -1,0 +1,220 @@
+/* wpvision Admin Styles */
+.wpvision-settings-wrap {
+    max-width: 1200px;
+    margin: 20px auto;
+    background: #f9f9f9;
+    padding: 30px;
+    border-radius: 8px;
+}
+
+.wpvision-title {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 32px;
+    color: #1e293b;
+    margin-bottom: 10px;
+}
+
+.wpvision-logo {
+    font-size: 40px;
+}
+
+.wpvision-description {
+    color: #64748b;
+    font-size: 16px;
+    margin-bottom: 30px;
+}
+
+.wpvision-widgets-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+.wpvision-widget-card {
+    background: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.wpvision-widget-card:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    transform: translateY(-5px);
+}
+
+.wpvision-widget-card.active {
+    border-color: #10b981;
+    background: linear-gradient(135deg, #ffffff 0%, #f0fdf4 100%);
+}
+
+.widget-card-header {
+    padding: 25px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.widget-icon {
+    font-size: 36px;
+    line-height: 1;
+}
+
+.widget-card-header h3 {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.widget-card-body {
+    padding: 25px;
+}
+
+.widget-card-body p {
+    color: #475569;
+    font-size: 15px;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.widget-features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.widget-features li {
+    color: #64748b;
+    padding: 8px 0;
+    font-size: 14px;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.widget-features li:last-child {
+    border-bottom: none;
+}
+
+.widget-card-footer {
+    padding: 20px 25px;
+    background: #f8fafc;
+    border-top: 1px solid #e2e8f0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Toggle Switch */
+.wpvision-toggle {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.wpvision-toggle input[type="checkbox"] {
+    display: none;
+}
+
+.toggle-slider {
+    position: relative;
+    width: 60px;
+    height: 30px;
+    background: #cbd5e1;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+}
+
+.toggle-slider::before {
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: white;
+    top: 3px;
+    left: 3px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.wpvision-toggle input[type="checkbox"]:checked + .toggle-slider {
+    background: #10b981;
+}
+
+.wpvision-toggle input[type="checkbox"]:checked + .toggle-slider::before {
+    transform: translateX(30px);
+}
+
+.toggle-label {
+    font-weight: 600;
+    color: #1e293b;
+    font-size: 14px;
+}
+
+/* Submit Button */
+.wpvision-submit-wrapper {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.wpvision-submit-wrapper .button-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none;
+    padding: 15px 50px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+    transition: all 0.3s ease;
+}
+
+.wpvision-submit-wrapper .button-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.5);
+}
+
+/* Info Box */
+.wpvision-info-box {
+    background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%);
+    border: 2px solid #ffc107;
+    border-radius: 12px;
+    padding: 25px;
+    margin-top: 30px;
+}
+
+.wpvision-info-box h3 {
+    color: #856404;
+    margin-top: 0;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.wpvision-info-box p {
+    color: #856404;
+    margin: 10px 0;
+    line-height: 1.6;
+}
+
+.wpvision-info-box strong {
+    color: #664d03;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .wpvision-widgets-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .wpvision-settings-wrap {
+        padding: 20px;
+    }
+}
